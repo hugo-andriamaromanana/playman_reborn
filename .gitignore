@@ -1,0 +1,11 @@
+src/__pycache__
+src/generator/base/__pycache__
+src/generator/base/tools/__pycache__
+src/generator/utils/__pycache__
+tests/__pycache__
+.pytest_cache
+.ipynb_checkpoints
+.vscode
+.idea
+.mypy_cache
+.git
