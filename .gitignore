@@ -9,3 +9,6 @@ tests/__pycache__
 .idea
 .mypy_cache
 .git
+src/settings/params.json
+src/generator/__pycache__/
+docs/
