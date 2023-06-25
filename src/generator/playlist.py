@@ -6,11 +6,7 @@ from os import path
 
 class Playlist():
     
-    def __init__(self, playlist_name: str, playlist_ID: str, current_user: str):
-        
-        self.current_user = Scrapper.current_user
-            
-        self.key = Scrapper.key
+    def __init__(self, playlist_name: str, playlist_ID: str, current_user: str, key: str):
         
         self.playlist_name = playlist_name
         
@@ -18,16 +14,18 @@ class Playlist():
         
         self.playlist_ID = playlist_ID
         
+        self.key = key
+        
         self.playlist_items = self.get_playlist_items()
         
 
-    def get_playlist_items(self) -> list:
+    def get_playlist_items(self) -> list[dict[str,str]]:
             
             url = "https://www.googleapis.com/youtube/v3/playlistItems"
             params = {
                 'part': 'snippet',
                 'playlistId': self.playlist_ID,
-                'maxResults': 50,
+                'maxResults': 50,   
                 'key': self.key
             }
     
@@ -41,7 +39,7 @@ class Playlist():
                 arr.append(response)
             return arr
 
-    def get_all_playlists_titles(self, playlist_name) -> list:
+    def get_all_playlists_titles(self, playlist_ID: str) -> list[str]:
         df = get_csv(path.join(path.dirname(__file__), '..','..', 'docs', self.current_user, 'items.csv'))
-        return list(df['title'].loc[df['playlist_name'] == playlist_name])
+        return list(df['title'].loc[df['playlist_ID'] == playlist_ID])
 

@@ -2,14 +2,14 @@ import pandas as pd
 from os import path
 
 
-def get_csv(name: str):
+def get_csv(name: str) -> pd.DataFrame:
     return pd.read_csv(name)
 
 
-def add_dic_to_items_csv(item: dict, current_user: str):
+def add_dic_to_items_csv(item: dict, current_user: str) -> bool:
 
     dump_path = path.join(path.dirname(
-        __file__), "..", '..', 'users', current_user, 'items.csv')
+        __file__), "..", '..','..', 'docs', current_user, 'items.csv')
     
     items = get_csv(dump_path)
     if item['title'] not in list(items['title']):
