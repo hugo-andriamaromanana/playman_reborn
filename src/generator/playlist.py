@@ -42,4 +42,3 @@ class Playlist():
     def get_all_playlists_titles(self, playlist_ID: str) -> list[str]:
         df = get_csv(path.join(path.dirname(__file__), '..','..', 'docs', self.current_user, 'items.csv'))
         return list(df['title'].loc[df['playlist_ID'] == playlist_ID])
-

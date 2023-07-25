@@ -27,7 +27,7 @@ def add_user_to_settings(username: str, channel_id: str) -> str:
     }
     dump_json(users_json, os.path.join(os.path.dirname(
         __file__), '..', 'settings', 'users.json'))
-    return f'User: "{username}" added to settings/users.json'
+    print( f'User: "{username}" added to settings/users.json')
 
 
 def create_user_files(username: str, channel_id: str) -> str:
@@ -35,7 +35,7 @@ def create_user_files(username: str, channel_id: str) -> str:
     mkdir_user(username)
     add_user_to_settings(username, channel_id)
     init_items_in_user_DIR(username)
-    return f"User created successfully: \n Username: {username}\nChannel ID: {channel_id}"
+    print( f"User created successfully: \n Username: {username}\nChannel ID: {channel_id}")
 
 
 def save_channel_id(username: str, channel_id: str) -> str:

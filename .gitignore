@@ -12,3 +12,5 @@ tests/__pycache__
 src/settings/params.json
 src/generator/__pycache__/
 docs/
+.pytest_cache/
+.gitignore

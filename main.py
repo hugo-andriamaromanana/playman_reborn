@@ -13,7 +13,7 @@ import sys
 def main(username: str, channel_id: str):
     
 
-    if channel_id == 'None':
+    if channel_id == 'None': 
         channel_id = get_channel_ID(username)
 
     if not user_exist(username):
@@ -62,5 +62,5 @@ def main(username: str, channel_id: str):
 
 
 if __name__ == '__main__':
-    # main(sys.argv[1], sys.argv[2])
-    main('Hugo', 'None')
+    main(sys.argv[1], sys.argv[2])
+    # main('Hugo', 'None')
